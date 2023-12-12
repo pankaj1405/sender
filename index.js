@@ -2,7 +2,12 @@ const express = require('express');
 const axios = require('axios');  // Use 'axios' directly
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello, World! sender...');
+});
+
 
 // Azure AD configuration for sender
 const azureAdConfig = {
