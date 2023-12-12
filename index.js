@@ -15,7 +15,7 @@ const azureAdConfig = {
     clientId: '39673c85-309e-431c-b81d-25476d8797f8',
     clientSecret: 'Ank8Q~Y15OoCrKBVONL6m6t4FnICBWlIxnpFtcCo',
    // receiverApiUrl: 'api://6e0063e1-5b74-4730-99c6-2b1541144e5c'
-    receiverApiUrl: 'https://add67cd2-c8b2-416c-b171-b61b22be92f4.onmicrosoft.com/api://6e0063e1-5b74-4730-99c6-2b1541144e5c',
+    //receiverApiUrl: 'https://add67cd2-c8b2-416c-b171-b61b22be92f4.onmicrosoft.com/api://6e0063e1-5b74-4730-99c6-2b1541144e5c',
 };
 
 // Request an access token from Azure AD
@@ -25,7 +25,9 @@ async function getAccessToken() {
             grant_type: 'client_credentials',
             client_id: azureAdConfig.clientId,
             client_secret: azureAdConfig.clientSecret,
-            scope: azureAdConfig.receiverApiUrl + '/.default',
+            // scope: azureAdConfig.receiverApiUrl + '/.default',
+            scope: 'api://6e0063e1-5b74-4730-99c6-2b1541144e5c/.default',
+
         });
         const accessToken = response.data.access_token;
         console.log('Access Token:', accessToken);
