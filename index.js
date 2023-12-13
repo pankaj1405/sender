@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/', async (req, res) => {
+app.get('/send-data', async (req, res) => {
   // Generate token
   const tokenResponse = await axios.post(
     'https://login.microsoftonline.com/add67cd2-c8b2-416c-b171-b61b22be92f4/oauth2/v2.0/token',
